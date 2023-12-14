@@ -9,13 +9,17 @@ public abstract class State {
 
     private int t;
 
-    private final int duration = 0;
+    private final int duration;
 
-    final State tick(Cat_old cat){
+    public State(int duration){
+        this.duration = duration;
+    }
+
+    final State tick(Cat cat){
         return null;
     }
 
-    abstract State successor(Cat_old cat);
+    abstract State successor(Cat cat);
 
     public int getTime(){
         return t;

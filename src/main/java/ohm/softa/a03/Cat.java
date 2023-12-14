@@ -15,7 +15,7 @@ public class Cat {
         this.awake = awake;
         this.digest = digest;
 
-        currentState = new SleepingState();
+        currentState = new SleepingState(sleep);
     }
 
     public void feed(){
