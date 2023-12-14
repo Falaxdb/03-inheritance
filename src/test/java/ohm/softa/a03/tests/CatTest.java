@@ -1,5 +1,6 @@
 package ohm.softa.a03.tests;
 
+import ohm.softa.a03.Cat;
 import ohm.softa.a03.Cat_old;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,11 +21,11 @@ public class CatTest {
 	private static final int Awake = 15;
 	private static final int Digest = 10;
 
-	private Cat_old animal;
+	private Cat animal;
 
 	@BeforeEach
 	void setUp() {
-		animal = new Cat_old("Horst", Sleep, Awake, Digest);
+		animal = new Cat("Horst", Sleep, Awake, Digest);
 	}
 
 	@Test
