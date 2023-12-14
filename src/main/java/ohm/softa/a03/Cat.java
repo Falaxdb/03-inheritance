@@ -19,6 +19,9 @@ public class Cat {
     }
 
     public void feed(){
+        if (!isHungry())
+            throw new IllegalStateException("Not every cat is Garfield...");
+
         if (currentState instanceof HungryState){
             currentState = ((HungryState) currentState).feed(this);
         }
