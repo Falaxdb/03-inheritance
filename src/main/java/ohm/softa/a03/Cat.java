@@ -19,27 +19,29 @@ public class Cat {
     }
 
     public void feed(){
-
+        if (currentState instanceof HungryState){
+            currentState = ((HungryState) currentState).feed(this);
+        }
     }
 
     public void tick(){
-
+       currentState = currentState.tick(this);
     }
 
     public boolean isAsleep(){
-        return false;
+        return currentState instanceof SleepingState;
     }
     public boolean isPlayful(){
-        return false;
+        return currentState instanceof PlayfulState;
     }
     public boolean isHungry(){
-        return false;
+        return currentState instanceof HungryState;
     }
     public boolean isDigesting(){
-        return false;
+        return currentState instanceof DigestingState;
     }
     public boolean isDead(){
-        return false;
+        return currentState instanceof DeathState;
     }
 
     public int getSleep(){

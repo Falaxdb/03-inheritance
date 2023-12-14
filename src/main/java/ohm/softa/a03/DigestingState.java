@@ -6,6 +6,10 @@ public class DigestingState extends State{
 
     @Override
     State successor(Cat cat) {
-        return null;
+        if (super.getTime() == super.getDuration()){
+            logger.info("Getting in a playful mood!");
+            return new PlayfulState(cat.getAwake()-super.getTime());
+        }
+        return this;
     }
 }

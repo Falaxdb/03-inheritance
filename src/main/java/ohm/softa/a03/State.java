@@ -7,7 +7,7 @@ public abstract class State {
 
     protected Logger logger = LogManager.getLogger();
 
-    private int t;
+    private int t = 0;
 
     private final int duration;
 
@@ -16,7 +16,10 @@ public abstract class State {
     }
 
     final State tick(Cat cat){
-        return null;
+        logger.info("tick()");
+        t = t + 1;
+
+        return successor(cat);
     }
 
     abstract State successor(Cat cat);

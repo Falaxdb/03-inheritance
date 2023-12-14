@@ -10,5 +10,11 @@ public class SleepingState extends State{
     @Override
     State successor(Cat cat) {
 
+        if (super.getTime() == cat.getSleep()){
+            logger.info("Yoan... getting hungry!");
+            return new HungryState(cat.getAwake());
+        }
+
+        return this;
     }
 }
