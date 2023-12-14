@@ -7,10 +7,7 @@ public class PlayfulState extends State{
 
     @Override
     State successor(Cat cat) {
-        if (super.getTime() >= super.getDuration()){
-            logger.info("Yoan... getting tired!");
-            return new SleepingState(cat.getSleep());
-        }
-        return this;
+        logger.info("Yoan... getting tired!");
+        return new SleepingState(cat.getSleep());
     }
 }

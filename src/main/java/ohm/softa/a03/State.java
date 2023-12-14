@@ -16,10 +16,15 @@ public abstract class State {
     }
 
     final State tick(Cat cat){
-        logger.info("tick()");
+        // time goes by...
         t = t + 1;
 
-        return successor(cat);
+        if(t < duration) {
+            logger.info("Still in {}", getClass().getSimpleName());
+            return this;
+        } else {
+            return successor(cat);
+        }
     }
 
     abstract State successor(Cat cat);

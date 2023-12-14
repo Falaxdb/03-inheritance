@@ -8,13 +8,8 @@ public class HungryState extends State{
 
     @Override
     State successor(Cat cat) {
-        // Time zu awake time
-        if (super.getTime() == super.getDuration()){
             logger.info("I've starved for a too long time...good bye...");
             return new DeathState(10);
-        }
-
-        return this;
     }
 
     public State feed(Cat cat){
@@ -23,7 +18,7 @@ public class HungryState extends State{
         }
 
         logger.info("You feed the cat...");
-        return new DigestingState(cat.getDigest());
+        return new DigestingState(cat.getDigest(), getDuration() - getTime());
     }
 
 }
