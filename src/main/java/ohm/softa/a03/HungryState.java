@@ -18,6 +18,7 @@ public class HungryState extends State{
         }
 
         logger.info("You feed the cat...");
+        // Die katze ist nur maximal so lange wach. RemainingWakeTime ist die restliche wache zeit
         return new DigestingState(cat.getDigest(), getDuration() - getTime());
     }
 
